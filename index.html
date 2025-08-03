@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+  <h1>Welcome To Your Birthday Website</h1>
+  <img src="image/sister.jpeg" alt="My Sister" class="sister-img">
+  <form onsubmit="return validateColor()">
+  <label for="color">Enter your favorite color to continue:</label><br>
+  <input type="text" id="color" name="color" required><br><br>
+  <span id="color-error" style="color: red; display: none;">You changed your favorite color girl? 💜</span><br><br>
+  <button type="submit">Submit</button>
+</form>
+</body>
+<script>
+  function validateColor() {
+    const colorInput = document.getElementById('color');
+    const errorMsg = document.getElementById('color-error');
+    const userColor = colorInput.value.trim().toLowerCase();
+
+    if (userColor === 'purple') {
+      window.location.href = 'message.html';
+      return false; 
+    } else {
+      errorMsg.style.display = 'inline';
+      return false;
+    }
+  }
+</script>
+</html>
